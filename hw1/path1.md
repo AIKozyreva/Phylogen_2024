@@ -67,3 +67,5 @@ iqtree2 -s hum_MT_haplo.aln -bb 1000 -m MFP -nt 16
 
 Вот с отображением бутстрепов и эволюц.расстояний в виде "as age", и "re-root at midpoint" - опции ITOL. 
  ![LHSnAp0r-iSpGHMVodwowg](https://github.com/user-attachments/assets/1f76edcd-6f97-46e5-901e-ce8bd7ded658)
+
+ 
