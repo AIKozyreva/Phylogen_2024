@@ -132,8 +132,6 @@ for accession in accessions:
         if search_results["Count"] == "0":
             print(f"No records found for {accession}")
             continue
-
-        # Получаем WebEnv и QueryKey
         webenv = search_results["WebEnv"]
         query_key = search_results["QueryKey"]
 
@@ -156,19 +154,15 @@ for accession in accessions:
 
         # Добавление метаданных в список
         metadata_rows.append([accession, haplogroup, organelle, note_info])
+    except Exception as e:
+        print(f"Error fetching data for {accession}: {e}")
+        metadata_rows.append([accession, "error", "error", str(e)])
 
-        except Exception as e:
-            print(f"Error fetching data for {accession}: {e}")
-            metadata_rows.append([accession, "error", "error", str(e)])
-
-# Сохранение метаданных в TSV файл
+# Сохранение метаданных
 metadata_df = pd.DataFrame(metadata_rows, columns=["accession", "haplogroup", "organelle", "note_info"])
 metadata_df.to_csv(output_metadata_file, sep='\t', index=False)
 
 print(f"Metadata saved to {output_metadata_file}")
 print(f"GBK files saved to {output_dir}")
-        print(f"Parsed record for {accession} with {len(record.features)} features")
 
-    except Exception as e:
-        print(f"Error processing {accession}: {e}")
 ```
