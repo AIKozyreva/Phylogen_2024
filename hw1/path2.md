@@ -49,6 +49,8 @@ haplo_meta_df.to_csv('/mnt/230924_phylo_hw/061024_part2/haplo_meta_df.tsv',sep="
  
    важнейший принцип биоинформатики be like: **Можно безобразно - главное однообразно** :) 
 
+Мы получили хорошую колонку Accessions - по факту это как раз то, что нужно -список - чтоб по этим id завпросить у бд gbk файлы и их прочитать. (в моём случае я их ещё сохраню для спокойствия души, но этого делать НЕ стоит, если у вас мало места). 
+
 
 **Шаг 2 Как достать метаданные с NCBI**
 Теория: у NCBI есть два варика программного доступа для массового или автоматического скачивания данных. 
@@ -63,6 +65,110 @@ haplo_meta_df.to_csv('/mnt/230924_phylo_hw/061024_part2/haplo_meta_df.tsv',sep="
 
 Документация на ncbi-datasets-cli: https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/ 
 
-Факт: для того, чтобы достать любые данные через любой из вариантов выше вам нужно указать какой-то идентификатор записи, что прога вообще должна спросить у базы. Чем больше параметров вы указываете, тем уже будет вопрос проги к базе - всё как если б вы выставляли фильтры ручками на сайте ncbi, но только происходит под капотом. В качестве таких идентификаторов могут выступать или accessions или ncbi taxon id. Обычно именно эти значения. 
+Факт: для того, чтобы достать любые данные через любой из вариантов выше вам нужно указать какой-то идентификатор записи, что прога вообще должна спросить у базы. Чем больше параметров вы указываете, тем уже будет вопрос проги к базе - всё как если б вы выставляли фильтры ручками на сайте ncbi, но только происходит под капотом. В качестве таких идентификаторов могут выступать или accessions или ncbi taxon id. Обычно именно эти значения. У нас как раз accessions теперь есть из предыдущего шага (колонка в датафрейме).
 
+В коде ниже облажалась с парсингом гбк файла, надо будет переписать когда-нибудь, потому что я напрасно ориентировалась только на поле note, надо было ещё geo_loc добавить
+```
+from Bio import Entrez, SeqIO
+import os
+import pandas as pd
+import re
+import os
 
+Entrez.email = "anfisakozyr@gmail.com"
+Entrez.api_key = "262c18e128672487a2ad30be17815ca37008"
+
+input_tsv = "/mnt/230924_phylo_hw/061024_part2/haplo_meta_df.tsv"
+output_dir = "/mnt/230924_phylo_hw/061024_part2/gbk_files"
+output_metadata_file = "/mnt/230924_phylo_hw/061024_part2/metadata.tsv"
+
+# Функция для Esearch 
+def search_accession(accession):
+    search_handle = Entrez.esearch(db="nucleotide", term=accession, usehistory="y")
+    search_results = Entrez.read(search_handle)
+    search_handle.close()
+    print (f" \n search result for {accession} is \n {search_results}")
+    return search_results
+
+# Функция для EFetch
+def fetch_gbk_file(accession, webenv, query_key):
+    efetch_handle = Entrez.efetch(db="nucleotide", query_key=query_key, WebEnv=webenv, rettype="gb", retmode="text")
+    gbk_filename = os.path.join(output_dir, f"{accession}.gbk")
+    print(efetch_handle.read())
+    with open(gbk_filename, "w") as gbk_file:
+        gbk_file.write(efetch_handle.read())
+    efetch_handle.close()
+    return gbk_filename
+
+def parse_gbk_file(gbk_filename):
+    handle = open(gbk_filename, "r")
+    record = SeqIO.read(handle, "genbank")
+    handle.close()
+    return record
+
+def extract_note_info(note):
+    country = ethnicity = "unknown"
+    for eth in ethnicities:
+        if eth.lower() in note.lower():
+            ethnicity = eth
+            break
+    for country_name in countries:
+        if country_name.lower() in note.lower():
+            country = country_name
+            break
+    return ethnicity, country
+
+os.makedirs(output_dir, exist_ok=True)
+df = pd.read_csv(input_tsv, sep='\t', header=None, names=["accession", "haplogroup"])
+accessions = df['accession']
+metadata_rows = []
+
+for accession in accessions:
+    try:
+        print(f"Searching for accession: {accession}")
+        
+        # Выполняем поиск - esearch
+        search_results = search_accession(accession)
+        if search_results["Count"] == "0":
+            print(f"No records found for {accession}")
+            continue
+
+        # Получаем WebEnv и QueryKey
+        webenv = search_results["WebEnv"]
+        query_key = search_results["QueryKey"]
+
+        # Выпаолняем запрос efetch - получаем доступ и сохраняем GBK
+        print(f"Fetching GBK file for {accession}")
+        gbk_filename = fetch_gbk_file(accession, webenv, query_key)
+        
+        # Парсинг GBK файла
+        record = parse_gbk_file(gbk_filename)
+        for feature in record.features:
+            if feature.type == "source":
+                haplogroup = feature.qualifiers.get("haplogroup", ["unknown"])[0]
+                organelle = feature.qualifiers.get("organelle", ["unknown"])[0]
+                note = feature.qualifiers.get("note", ["unknown"])[0]
+
+                # Извлекаем страну и национальность из note
+                ethnicity, country = extract_note_info(note)
+                note_info = f"Ethnicity: {ethnicity}, Country: {country}"
+                break
+
+        # Добавление метаданных в список
+        metadata_rows.append([accession, haplogroup, organelle, note_info])
+
+        except Exception as e:
+            print(f"Error fetching data for {accession}: {e}")
+            metadata_rows.append([accession, "error", "error", str(e)])
+
+# Сохранение метаданных в TSV файл
+metadata_df = pd.DataFrame(metadata_rows, columns=["accession", "haplogroup", "organelle", "note_info"])
+metadata_df.to_csv(output_metadata_file, sep='\t', index=False)
+
+print(f"Metadata saved to {output_metadata_file}")
+print(f"GBK files saved to {output_dir}")
+        print(f"Parsed record for {accession} with {len(record.features)} features")
+
+    except Exception as e:
+        print(f"Error processing {accession}: {e}")
+```
