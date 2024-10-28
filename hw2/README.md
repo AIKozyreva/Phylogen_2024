@@ -27,6 +27,8 @@ ________________________________________________________________________________
 ![image](https://github.com/user-attachments/assets/e37111c1-8475-49e4-b5da-091f33078c0d)
 ![OBJBLUFrQBRUrRLMZq1WkA](https://github.com/user-attachments/assets/0e87d8e1-82c0-42ed-8685-674019bd902e)
 
+MLXXX = Mnemiopsis leidyi - model organism's FYY-peptides, which have have had different classes hits among their genome data.
+
 ______________________________________________________________________________________________________________________________________________________________
 
 #### 2) Кластеризации всех FYY-мотив содержащих последовательностей для того, чтоб увиденть реально они на классы делятся или как.
