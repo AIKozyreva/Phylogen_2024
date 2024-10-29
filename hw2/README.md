@@ -19,7 +19,7 @@
 ![image](https://github.com/user-attachments/assets/1aff13f6-96b4-4b03-a9ff-9a770c89cfe6)
 
 
-Я сделала 4 дерева: 1) полностью на сыром выравнивании всех участвовавших в статье полследовательностей-FYY, методом правдоподобия с моделью TVM+F+R5. 2) Кластеризация всех FYY-мотив содержащих последовательностей построила результат MMseqs2. 3) Для группы гомологов isopnicillin-n-synthase из разных изучаемых таксонов дерево. 4) Для группы гомологов 2OMeFe1(2)-oxygenase из разных изучаемых таксонов дерево.
+Я сделала 4 дерева: 1) полностью на сыром выравнивании всех участвовавших в статье полследовательностей-FYY, методом правдоподобия с моделью TVM+F+R5. 2) Кластеризация всех FYY-мотив содержащих последовательностей построила результат MMseqs2. 3) Для группы гомологов isopnicillin-n-synthase из разных изучаемых таксонов дерево. 4) Для группы гомологов 2OGFe1(2)-oxygenase из разных изучаемых таксонов дерево.
 ______________________________________________________________________________________________________________________________________________________________
 
 #### 1) Полностью на выравнивании всех участвовавших в статье полследовательностей FYY, методом правдоподобия с моделью TVM+F+R5.
@@ -44,9 +44,14 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________________________________________________________________________
 
-#### 4) Дерево для последовательностей-FYY, гомологичных 2OMeFe1(2), в разных гребневиках.
+#### 4) Дерево для последовательностей-FYY, гомологичных 2OGFe1(2), в разных гребневиках.
 
 Дерево представлено на рисунке ниже. Дерево с подкреплённым к нему выравниванием представлено в файле "2OMeFe12-pepides_alignment_phylo.pdf"
 Дерево с подбором эволюционной модели построено методом правдоподобия с моделью TVMe+R4. 
 
 
+
+______________________________________________________________________________________________________________________________________________________________
+
+
+"_Interestingly, nearly all of the top hits for all of the proteins were to a 2OG-Fe(II) oxygenase from the ciliate Oxytricha trifallax. This was surprising since ciliates are unicellular eukaryotes and are not closely related to ctenophores. In a more restricted search using the Uniprot/Swissprot database, the top BLAST hits for many of the FYY proteins were to the same set of isopenicillin-N-synthase (IPNS) homologs, mostly from bacteria. These proteins are members of a group of Fe-dependent oxygenases that include IPNS and deacetoxycephalosporin C synthase (DAOCS). These are the enzymes responsible for the heterocycle-forming steps of penicillin biosynthesis and the ring expansion in cephalosporin biosynthesis, respectively, and therefore were considered even stronger candidates for involvement in cyclization of FYY to coelenterazine_".
