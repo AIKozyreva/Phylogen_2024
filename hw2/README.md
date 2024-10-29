@@ -19,6 +19,9 @@
 ![image](https://github.com/user-attachments/assets/1aff13f6-96b4-4b03-a9ff-9a770c89cfe6)
 
 
+![image](https://github.com/user-attachments/assets/0b4116a2-d98f-4981-9619-02dd580f20e1)
+
+
 Я сделала 3 дерева: 1) полностью на сыром выравнивании всех участвовавших в статье последовательностей-FYY, методом правдоподобия с моделью TVM+F+R5. 2) Для группы гомологов isopnicillin-n-synthase бактерий из разных изучаемых таксонов дерево. 3) Для группы гомологов эукариотической 2OGFe1(2)-oxygenase из разных изучаемых таксонов дерево.
 
 Команды аналогичные для каждого этапа. В общем виде показаны ниже. 
@@ -29,7 +32,7 @@ iqtree2 -s alignment_file.aln -bb 1000 -m MFP -nt 3
 ```
 ______________________________________________________________________________________________________________________________________________________________
 
-#### 1) Полностью на выравнивании всех участвовавших в статье полследовательностей FYY, методом правдоподобия с моделью TVM+F+R5.
+#### 1) На выравнивании всех участвовавших в статье полследовательностей FYY, методом правдоподобия с моделью TVM+F+R5.
 
 ![OBJBLUFrQBRUrRLMZq1WkA](https://github.com/user-attachments/assets/0e87d8e1-82c0-42ed-8685-674019bd902e)
 
@@ -37,7 +40,7 @@ MLXXX = Mnemiopsis leidyi - model organism's FYY-peptides, which have have had d
 
 ______________________________________________________________________________________________________________________________________________________________
 
-#### 2) Дерево для последовательностей-FYY, гомологичных isopenicillin-N-synthase бактерий, в разных светящихся и несветящихся гребневиках (они естественная аутгруппа, так исторически-биологически сложилось).
+#### 2) Дерево для последовательностей-FYY, гомологичных isopenicillin-N-synthase бактерий, в разных гребневиках.
 
 Дерево представлено на рисунке ниже. Дерево с подкреплённым к нему выравниванием представлено в файле "FYY-pepides_alignment_phylo.pdf"
 Дерево с подбором эволюционной модели построено методом правдоподобия с моделью TPM2+F+R4. 
@@ -56,9 +59,37 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________________________________________________________________________
 
+![image](https://github.com/user-attachments/assets/93c82ef0-82f3-461c-b3c9-ce3c143ff069)
 
 
 "_Interestingly, nearly all of the top hits for all of the proteins were to a 2OG-Fe(II) oxygenase from the ciliate Oxytricha trifallax. This was surprising since ciliates are unicellular eukaryotes and are not closely related to ctenophores. In a more restricted search using the Uniprot/Swissprot database, the top BLAST hits for many of the FYY proteins were to the same set of isopenicillin-N-synthase (IPNS) homologs, mostly from bacteria. These proteins are members of a group of Fe-dependent oxygenases that include IPNS and deacetoxycephalosporin C synthase (DAOCS). These are the enzymes responsible for the heterocycle-forming steps of penicillin biosynthesis and the ring expansion in cephalosporin biosynthesis, respectively, and therefore were considered even stronger candidates for involvement in cyclization of FYY to coelenterazine_".
+
+```
+Species	Luminous? Y/N	
+Bathocyroe fosteri	Yes	
+Bathyctena chuni	Yes	
+Beroe abyssicola	Yes	
+Beroe forskalii	Yes
+Bolinopsis infundibulum	Yes	
+Charistephane fugiens	Yes
+Dryodora glandiformis	Yes
+Euplokamis dunlapae	Yes
+Haeckelia rubra	Yes	
+Hormiphora californensis	No
+Lampea lactea	Yes	
+Lampocteis cruentiventer	Yes	
+Ocyropsis maculata	Yes	
+Thalassocalyce inconstans	Yes
+Undescribed ctenophore B	Yes
+Undescribed ctenophore C	Yes	
+Undescribed ctenophore N1	Yes	
+Undescribed ctenophore N2	Yes	
+Undescribed ctenophore T	Yes	
+Undescribed ctenophore V	Yes	
+Undescribed ctenophore W	Yes	
+Velamen parallelum	Yes	
+```
+
 
 
 P.S. Про программы. 
