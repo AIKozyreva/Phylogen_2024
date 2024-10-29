@@ -1,4 +1,4 @@
-**Статья на воспроизведение: Francis WR, Shaner NC, Christianson LM, Powers ML, Haddock SH. Occurrence of Isopenicillin-N-Synthase Homologs in Bioluminescent Ctenophores and Implications for Coelenterazine Biosynthesis. PLoS One. 2015;10(6):e0128742. Published 2015 Jun 30. doi:10.1371/journal.pone.0128742 **
+**Статья на воспроизведение: Francis WR, Shaner NC, Christianson LM, Powers ML, Haddock SH. Occurrence of Isopenicillin-N-Synthase Homologs in Bioluminescent Ctenophores and Implications for Coelenterazine Biosynthesis. PLoS One. 2015;10(6):e0128742. Published 2015 Jun 30. doi:10.1371/journal.pone.0128742**
 
 **Данные для анализа:** Последовательности из статьи, включающие для разных таксонов ряд транскриптов, потенциально кодирующих интересующие авторов пептиды с FYY на конце и\или потенциально участвующие в цикле синтеза коцелентироза, который является не окисленным вариантом субстрата для ферментативной реакции люцефирин-люциферазного взаимодействия, которая в разных морских организмах приводит к биолюминесценции. "_Ctenophore sequences used in analysis can be found at GenBank, with accessions: KM233765-KM233833_".
 
