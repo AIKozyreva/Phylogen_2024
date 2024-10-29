@@ -24,7 +24,6 @@ ________________________________________________________________________________
 
 #### 1) Полностью на выравнивании всех участвовавших в статье полследовательностей FYY, методом правдоподобия с моделью TVM+F+R5.
 
-![image](https://github.com/user-attachments/assets/e37111c1-8475-49e4-b5da-091f33078c0d)
 ![OBJBLUFrQBRUrRLMZq1WkA](https://github.com/user-attachments/assets/0e87d8e1-82c0-42ed-8685-674019bd902e)
 
 MLXXX = Mnemiopsis leidyi - model organism's FYY-peptides, which have have had different classes hits among their genome data.
