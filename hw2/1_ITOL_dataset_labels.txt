@@ -1,0 +1,78 @@
+LABELS
+#use this template to change the leaf labels, or define/change the internal node names (displayed in mouseover popups)
+#lines starting with a hash are comments and ignored during parsing
+
+SEPARATOR TAB
+#SEPARATOR COMMA
+
+DATA
+#NODE_ID,LABEL
+KM233765.1	Hormiphora californensis_ nonPP
+KM233766.1	Velamen parallelum_ nonPP
+KM233767.1	Dryodora glandiformis_ nonPP
+KM233768.1	Ctenophora sp._ nonPP
+KM233769.1	Ctenophora sp._ nonPP
+KM233770.1	Ctenophora sp._ nonPP
+KM233771.1	Ocyropsis maculata_ nonPP
+KM233772.1	Charistephane fugiens_ FYY
+KM233773.1	Euplokamis dunlapae_ FYY
+KM233774.1	Euplokamis dunlapae_ FYY
+KM233775.1	Ctenophora sp._ FYY
+KM233776.1	Bathyctena chuni_ FYY
+KM233777.1	Ctenophora sp._ FYY
+KM233778.1	Ctenophora sp._ FYY
+KM233779.1	Ctenophora sp._ FYY
+KM233780.1	Ctenophora sp._ FYY
+KM233781.1	Dryodora glandiformis_ FYY
+KM233782.1	Bathocyroe fosteri_ FYY
+KM233783.1	Ctenophora sp._ FYY
+KM233784.1	Ctenophora sp._ FYY
+KM233785.1	Ctenophora sp._ FYY
+KM233786.1	Velamen parallelum_ FYY
+KM233787.1	Bolinopsis infundibulum_ FYY
+KM233788.1	Ocyropsis maculata_ FYY
+KM233789.1	Thalassocalyce inconstans_ FYY
+KM233790.1	Thalassocalyce inconstans_ FYY
+KM233791.1	Lampocteis cruentiventer_ FYY
+KM233792.1	Lobata sp._ FYY
+KM233793.1	Beroe abyssicola_ FYY
+KM233794.1	Beroe forskalii_ FYY
+KM233795.1	Haeckelia rubra_ FYY
+KM233796.1	Euplokamis dunlapae_ 2OGFe1
+KM233797.1	Ctenophora sp._ 2OGFe1
+KM233798.1	Ctenophora sp._ 2OGFe2
+KM233799.1	Ctenophora sp._ 2OGFe1
+KM233800.1	Ctenophora sp._ 2OGFe2
+KM233801.1	Bathyctena chuni_ 2OGFe1
+KM233802.1	Bathyctena chuni_ 2OGFe2
+KM233803.1	Ctenophora sp._ 2OGFe1
+KM233804.1	Ctenophora sp._ 2OGFe2
+KM233805.1	Ctenophora sp._ 2OGFe1
+KM233806.1	Ctenophora sp._ 2OGFe2
+KM233807.1	Bathocyroe fosteri_ 2OGFe1
+KM233808.1	Bathocyroe fosteri_ 2OGFe2
+KM233809.1	Hormiphora californensis_ 2OGFe2
+KM233810.1	Hormiphora californensis_ 2OGFe1
+KM233811.1	Dryodora glandiformis_ 2OGFe2
+KM233812.1	Dryodora glandiformis_ 2OGFe1
+KM233813.1	Bolinopsis infundibulum_ 2OGFe2
+KM233814.1	Ocyropsis maculata_ 2OGFe1
+KM233815.1	Ocyropsis maculata_ 2OGFe2
+KM233816.1	Velamen parallelum_ 2OGFe1
+KM233817.1	Lampocteis cruentiventer_ 2OGFe1
+KM233818.1	Lampocteis cruentiventer_ 2OGFe2
+KM233819.1	Thalassocalyce inconstans_ 2OGFe2
+KM233820.1	Thalassocalyce inconstans_ 2OGFe1
+KM233821.1	Beroe abyssicola_ 2OGFe1
+KM233822.1	Beroe abyssicola_ 2OGFe2
+KM233823.1	Beroe forskalii_ 2OGFe1
+KM233824.1	Haeckelia rubra_ 2OGFe1
+KM233825.1	Ctenophora sp._ FYY
+KM233826.1	Lampea lactea_ FYY
+KM233827.1	Charistephane fugiens_ 2OGFe1
+KM233828.1	Ctenophora sp._ 2OGFe1
+KM233829.1	Lampea lactea_ 2OGFe1
+KM233830.1	Lampea lactea_ 2OGFe2
+KM233831.1	Ctenophora sp._ 2OGFe2
+KM233832.1	Lobata sp._ 2OGFe1
+KM233833.1	Lobata sp._ 2OGFe2
