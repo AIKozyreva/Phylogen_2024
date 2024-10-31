@@ -36,7 +36,7 @@ ________________________________________________________________________________
 
 ![OBJBLUFrQBRUrRLMZq1WkA](https://github.com/user-attachments/assets/0e87d8e1-82c0-42ed-8685-674019bd902e)
 
-MLXXX = Mnemiopsis leidyi - model organism's FYY-peptides, which have have had different classes hits among their genome data.
+MLXXX = Mnemiopsis leidyi - model organism's FYY-peptides, which have have had different classes hits among their genome data. Hormiphora californensis - не светится.
 
 ______________________________________________________________________________________________________________________________________________________________
 
